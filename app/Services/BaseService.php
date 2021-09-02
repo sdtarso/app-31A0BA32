@@ -100,6 +100,8 @@ abstract class BaseService
         if ($result) {
             return $obj;
         }
+
+        return null;
     }
 
     public function updateData($key, $id, $data, $validate = false) {
