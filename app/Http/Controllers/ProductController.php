@@ -40,7 +40,7 @@ class ProductController extends Controller {
                     'file' => $e->getFile(),
                     'line' => $e->getLine(),
                 ]
-            ], $e->getCode() ?? 500);
+            ], $e->getCode() ?: 500);
         }
     }
 }
