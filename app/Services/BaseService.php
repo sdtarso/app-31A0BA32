@@ -119,8 +119,13 @@ abstract class BaseService
         return false;
     }
 
-    public function getAll()
+    public function paginate($itemsPerPage = 20)
     {
-        return $this->entity::all();
+        $query = $this->entity::query();
+        $itemsPerPage = min($itemsPerPage, 100);
+
+        return $query
+            ->orderBy('created_at', 'DESC')
+            ->paginate($itemsPerPage);
     }
 }
