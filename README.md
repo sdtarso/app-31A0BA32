@@ -14,25 +14,25 @@ Essentially, there are 2 tables, the product table itself and the log table, whi
 
 | Column | Type | Not Nullable | Auto Increment | Key | Default | Extra | Expression | Commentary |
 |---|---|---|---|---|---|---|---|---|
-| product_id | bigint unsigned | true | true | PRI | [NULL] | auto_increment |  |  |
-| pro_name | varchar(255) | true | false | [NULL] | [NULL] |  |  |  |
-| pro_sku | varchar(255) | true | false | UNI | [NULL] |  |  |  |
-| pro_quantity | int | true | false | [NULL] | [NULL] |  |  |  |
-| created_at | timestamp | false | false | [NULL] | [NULL] |  |  |  |
-| updated_at | timestamp | false | false | [NULL] | [NULL] |  |  |  |
-| deleted_at | timestamp | false | false | [NULL] | [NULL] |  |  |  |
+| product_id | bigint unsigned | true | true | PRI | [NULL] |
+| pro_name | varchar(255) | true | false | [NULL] | [NULL] |
+| pro_sku | varchar(255) | true | false | UNI | [NULL] |
+| pro_quantity | int | true | false | [NULL] | [NULL] |
+| created_at | timestamp | false | false | [NULL] | [NULL] |
+| updated_at | timestamp | false | false | [NULL] | [NULL] |
+| deleted_at | timestamp | false | false | [NULL] | [NULL] |
 
 #### Product Log
 
-| Column | Type | Not Nullable | Auto Increment | Key | Default | Extra | Expression | Commentary |
+| Column | Type | Not Nullable | Auto Increment | Key | Default |
 |---|---|---|---|---|---|---|---|---|
-| product_id | bigint unsigned | true | true | PRI | [NULL] | auto_increment |  |  |
-| pro_name | varchar(255) | true | false | [NULL] | [NULL] |  |  |  |
-| pro_sku | varchar(255) | true | false | UNI | [NULL] |  |  |  |
-| pro_quantity | int | true | false | [NULL] | [NULL] |  |  |  |
-| created_at | timestamp | false | false | [NULL] | [NULL] |  |  |  |
-| updated_at | timestamp | false | false | [NULL] | [NULL] |  |  |  |
-| deleted_at | timestamp | false | false | [NULL] | [NULL] |  |  |  |
+| product_id | bigint unsigned | true | true | PRI | [NULL] |
+| pro_name | varchar(255) | true | false | [NULL] | [NULL] |
+| pro_sku | varchar(255) | true | false | UNI | [NULL] |
+| pro_quantity | int | true | false | [NULL] | [NULL] |
+| created_at | timestamp | false | false | [NULL] | [NULL] |
+| updated_at | timestamp | false | false | [NULL] | [NULL] |
+| deleted_at | timestamp | false | false | [NULL] | [NULL] |
 
 ## Endpoint availables
 
