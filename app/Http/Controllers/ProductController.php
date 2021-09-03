@@ -15,7 +15,7 @@ class ProductController extends Controller {
         try {
 
             $ps = new ProductService;
-            $items = $ps->paginate($request->get('itemsPerPage') ?? 20);
+            $items = $ps->paginate($request->get('itemsPerPage') ?? 20)->items();
 
             return response()->json([
                 'success' => true,
@@ -111,7 +111,7 @@ class ProductController extends Controller {
         try {
 
             $ps = new ProductService;
-            $items = $ps->getProductHistory($sku, $request->get('itemsPerPage') ?? 20);
+            $items = $ps->getProductHistory($sku, $request->get('itemsPerPage') ?? 20)->items();
 
             return response()->json([
                 'success' => true,
