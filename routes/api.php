@@ -27,5 +27,6 @@ Route::group(array(
 
         Route::get('/', 'App\Http\Controllers\ProductController@list');
         Route::post('/', 'App\Http\Controllers\ProductController@create');
+        Route::put('/', 'App\Http\Controllers\ProductController@update');
     });
 });

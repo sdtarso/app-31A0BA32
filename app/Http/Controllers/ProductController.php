@@ -31,7 +31,7 @@ class ProductController extends Controller {
                     'file' => $e->getFile(),
                     'line' => $e->getLine(),
                 ]
-            ], $e->getCode() ?? 500);
+            ], $e->getCode() ?: 500);
         }
     }
 
@@ -56,6 +56,40 @@ class ProductController extends Controller {
             return response()->json([
                 'success' => true,
                 'product' => $ps->storeData($data)
+            ]);
+        } catch (Exception $e) {
+
+            return response()->json([
+                'success' => false,
+                'exception' => [
+                    'message' => $e->getMessage(),
+                    'code' => $e->getCode(),
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                ]
+            ], $e->getCode() ?: 500);
+        }
+    }
+
+    public function update(Request $request) {
+
+        try {
+
+            $ps = new ProductService;
+            $data = $request->all();
+
+            $rules = $ps->getRulesUpdate();
+            $validator = Validator::make($data, $rules);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'success' => false,
+                    'product' => $validator->errors()
+                ], 500);
+            }
+
+            return response()->json([
+                'success' => $ps->patchQuantity($data)
             ]);
         } catch (Exception $e) {
 
