@@ -26,6 +26,6 @@ Route::group(array(
     Route::group(array('prefix' => '/product'), function () {
 
         Route::get('/', 'App\Http\Controllers\ProductController@list');
-        Route::post('/', 'App\Http\Controllers\ProductController@crete');
+        Route::post('/', 'App\Http\Controllers\ProductController@create');
     });
 });
