@@ -17,4 +17,20 @@ class ProductService extends BaseService
 		];
 
     }
+
+    public function paginate($itemsPerPage = 20)
+    {
+        $query = $this->entity::query();
+        $itemsPerPage = min($itemsPerPage, 100);
+
+        return $query
+            ->orderBy('created_at', 'DESC')
+            ->select([
+                'product_id',
+                'pro_name',
+                'pro_sku',
+                'pro_quantity',
+                'created_at'
+            ])->paginate($itemsPerPage);
+    }
 }
