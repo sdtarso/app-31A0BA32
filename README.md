@@ -2,17 +2,17 @@
 
 ## About
 
-This is a simples API without authentication, wiht test purpose only
+This is a simples API without authentication, with test purpose only
 
 ## Tables
 
-Essentially, there are 2 tables, the product table itself, and the log table, wich store each modification made to each product, both tables have soft-delete columns
+Essentially, there are 2 tables, the product table itself and the log table, which store each modification made to each product, both tables have soft-delete columns
 
 ### Table structures
 
 #### Product
 
-| Column | Type | Not Nullable | Auto Increment | Key | Default | Extra | Expressão | Comentário |
+| Column | Type | Not Nullable | Auto Increment | Key | Default | Extra | Expression | Commentary |
 |---|---|---|---|---|---|---|---|---|
 | product_id | bigint unsigned | true | true | PRI | [NULL] | auto_increment |  |  |
 | pro_name | varchar(255) | true | false | [NULL] | [NULL] |  |  |  |
@@ -24,7 +24,7 @@ Essentially, there are 2 tables, the product table itself, and the log table, wi
 
 #### Product Log
 
-| Column | Type | Not Nullable | Auto Increment | Key | Default | Extra | Expressão | Comentário |
+| Column | Type | Not Nullable | Auto Increment | Key | Default | Extra | Expression | Commentary |
 |---|---|---|---|---|---|---|---|---|
 | product_id | bigint unsigned | true | true | PRI | [NULL] | auto_increment |  |  |
 | pro_name | varchar(255) | true | false | [NULL] | [NULL] |  |  |  |
