@@ -104,4 +104,30 @@ class ProductController extends Controller {
             ], $e->getCode() ?: 500);
         }
     }
+
+    public function history(Request $request, $sku)
+    {
+
+        try {
+
+            $ps = new ProductService;
+            $items = $ps->getProductHistory($sku, $request->get('itemsPerPage') ?? 20);
+
+            return response()->json([
+                'success' => true,
+                'items' => $items
+            ]);
+        } catch (Exception $e) {
+
+            return response()->json([
+                'success' => false,
+                'exception' => [
+                    'message' => $e->getMessage(),
+                    'code' => $e->getCode(),
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                ]
+            ], $e->getCode() ?: 500);
+        }
+    }
 }

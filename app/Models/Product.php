@@ -9,6 +9,6 @@ class Product extends BaseModel
 
     public function history() {
 
-        return $this->hasMany(ProductLog::class);
+        return $this->hasMany(ProductLog::class, 'product_id', 'product_id');
     }
 }

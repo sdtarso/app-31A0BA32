@@ -61,4 +61,21 @@ class ProductService extends BaseService
         return $this->entity::where('pro_sku', $data['pro_sku'])
             ->increment('pro_quantity', $data['pro_quantity']);
     }
+
+    public function getProductHistory($sku, $itemsPerPage)
+    {
+        $query = ProductLog::query();
+        $itemsPerPage = min($itemsPerPage, 100);
+
+        return $query
+            ->orderBy('created_at', 'DESC')
+            ->join('product', 'product_log.product_id', '=', 'product.product_id')
+            ->where('product.pro_sku', $sku)
+            ->select([
+                'pro_sku',
+                'prl_quantity',
+                'product_log.created_at'
+            ])->paginate($itemsPerPage);
+
+    }
 }
