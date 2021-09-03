@@ -12,8 +12,8 @@ Essentially, there are 2 tables, the product table itself and the log table, whi
 
 #### Product
 
-| Column | Type | Not Nullable | Auto Increment | Key | Default | Extra | Expression | Commentary |
-|---|---|---|---|---|---|---|---|---|
+| Column | Type | Not Nullable | Auto Increment | Key | Default |
+|---|---|---|---|---|---|
 | product_id | bigint unsigned | true | true | PRI | [NULL] |
 | pro_name | varchar(255) | true | false | [NULL] | [NULL] |
 | pro_sku | varchar(255) | true | false | UNI | [NULL] |
@@ -25,7 +25,7 @@ Essentially, there are 2 tables, the product table itself and the log table, whi
 #### Product Log
 
 | Column | Type | Not Nullable | Auto Increment | Key | Default |
-|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|
 | product_id | bigint unsigned | true | true | PRI | [NULL] |
 | pro_name | varchar(255) | true | false | [NULL] | [NULL] |
 | pro_sku | varchar(255) | true | false | UNI | [NULL] |
